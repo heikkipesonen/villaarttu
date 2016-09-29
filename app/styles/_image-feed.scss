@@ -1,0 +1,46 @@
+.image-feed {
+  position: relative;
+  margin-left: -2px;
+  margin-right: -2px;
+  margin-bottom: 32px;
+
+  .image-feed-item {
+    padding: 2px;
+
+    &:hover {
+      figure {
+        opacity: 0.8;
+      }
+    }
+
+    figure {
+      transition: 0.3s;
+      width: 100%;
+      padding-bottom: 100%;
+      height: 0px;
+      background-size: 200% 200%;
+      background-position: center center;
+    }
+  }
+
+  &.api-loading {
+    min-height: 200px;
+    overflow: hidden;
+
+    &:after {
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      text-align: center;
+      margin-top: -0.5em;
+      line-height: 1em;
+      content: 'Ladataan..';
+      font-size: 30pt;
+      opacity: 0.3;
+    }
+
+    .image-feed-item {
+      opacity: 0;
+    }
+  }
+}

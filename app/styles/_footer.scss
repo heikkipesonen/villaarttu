@@ -1,0 +1,28 @@
+footer.row {
+
+  @media (min-width: $screen-md-min) {
+    display: table;
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+
+    .footer-item {
+      display: table-cell;
+      vertical-align: bottom;
+      float: none;
+      padding-left: 0;
+      padding-right: 0;
+
+      * {
+        margin: 0;
+      }
+    }
+  }
+
+  @media (max-width: $screen-md-min) {
+    .footer-item {
+      min-height: 90px;
+      text-align: center !important;
+    }
+  }
+}

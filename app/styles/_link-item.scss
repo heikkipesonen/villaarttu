@@ -1,0 +1,19 @@
+.link-item {
+  padding-bottom: $grid-gutter-width;
+
+  figure {
+    height: 0px;
+    padding-bottom: 40%;
+    background-color: #eee;
+  }
+
+  .text-container {
+    font-weight: bold;
+  }
+
+  .links-container {
+    a {
+      display: block;
+    }
+  }
+}

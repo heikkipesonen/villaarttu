@@ -1,23 +1,15 @@
 (function App () {
-  const slide_images = [
+  'use strict';
+
+  const slideImages = [
     'https://hd.unsplash.com/photo-1470104240373-bc1812eddc9f',
     'https://hd.unsplash.com/photo-1470229722913-7c0e2dbbafd3',
     'https://hd.unsplash.com/photo-1471074454408-f7db62d99254'
   ];
 
-  const api_url = 'http://localhost:8888/villaarttu/proxy.php';
+  const apiUrl = 'http://localhost:8888/villaarttu/proxy.php';
   const container = document.getElementById('image-feed');
   const slider = document.getElementById('slider');
-
-  container.classList.add('api-loading');
-
-  fetch(api_url).then((blob) => {
-    blob.json().then((data) => {
-      container.classList.remove('api-loading');
-      let content = data.items.map(renderImageFeedItem).join('');
-      container.innerHTML = content;
-    });
-  });
 
   function renderImageFeedItem (imageData) {
     return `
@@ -29,18 +21,34 @@
     `;
   }
 
-  function setActiveSlide(target) {
-    let active = slider.querySelector('.slide-active')
-    let activeTab = slider.querySelector('.tab-active')
 
-    if (active) active.classList.remove('slide-active');
-    if (activeTab) activeTab.classList.remove('tab-active');
+  container.classList.add('api-loading');
+
+  fetch(apiUrl).then((blob) => {
+    blob.json().then((data) => {
+      container.classList.remove('api-loading');
+      let content = data.items.map(renderImageFeedItem).join('');
+      container.innerHTML = content;
+    });
+  });
+
+  function setActiveSlide(target) {
+    let active = slider.querySelector('.slide-active');
+    let activeTab = slider.querySelector('.tab-active');
+
+    if (active) {
+      active.classList.remove('slide-active');
+    }
+
+    if (activeTab) {
+      activeTab.classList.remove('tab-active');
+    }
 
     slider.querySelector(`[data-image="${target}"]`).classList.add('slide-active');
     slider.querySelector(`[data-target="${target}"]`).classList.add('tab-active');
   }
 
-  let images = slide_images.map((imagePath) => {
+  let images = slideImages.map((imagePath) => {
     return `
         <div class="slide" data-image="${imagePath}">
           <div class="slide-image" style="background-image: url('${imagePath}')"></div>
@@ -48,7 +56,7 @@
       `;
     }).join('');
 
-  let tabs = slide_images.map((imagePath) => {
+  let tabs = slideImages.map((imagePath) => {
       return `
         <div class="slider-tab" data-target="${imagePath}"></div>
       `;
@@ -58,14 +66,19 @@
 
 
   slider.innerHTML = images + tabs;
+
+  let setSlide = function (evt) {
+     setActiveSlide(evt.srcElement.getAttribute('data-target'));
+  };
+
   let sliderTabElements = slider.querySelectorAll('.slider-tab');
   for (let i = 0; i < sliderTabElements.length; i++) {
     let element = sliderTabElements[i];
 
-    element.addEventListener('click', (evt) => setActiveSlide(evt.srcElement.getAttribute('data-target')));
-    element.addEventListener('touchend',  (evt) => setActiveSlide(evt.srcElement.getAttribute('data-target')));
+    element.addEventListener('click', setSlide);
+    element.addEventListener('touchend', setSlide);
   }
 
-  setActiveSlide(slide_images[0]);
+  setActiveSlide(slideImages[0]);
 
 })();

@@ -1,15 +1,43 @@
-(function App () {
   'use strict';
 
-  const slideImages = [
-    'https://hd.unsplash.com/photo-1470104240373-bc1812eddc9f',
-    'https://hd.unsplash.com/photo-1470229722913-7c0e2dbbafd3',
-    'https://hd.unsplash.com/photo-1471074454408-f7db62d99254'
-  ];
 
-  const apiUrl = 'http://localhost:8888/villaarttu/proxy.php';
+  const sliderOptions = {
+    element: '#slider',
+    animation: 300,
+    slides: [
+      {
+        id: 1,
+        content: '<div class="slide-image" style="background-image: url(https://hd.unsplash.com/photo-1470104240373-bc1812eddc9f)"></div>',
+        next: 2,
+        prev: 4
+      },
+      {
+        id: 2,
+        content: '<div class="slide-image" style="background-image: url(https://hd.unsplash.com/photo-1470229722913-7c0e2dbbafd3)"></div>',
+        next: 3,
+        prev: 1
+      },
+      {
+        id: 3,
+        content: '<div class="slide-image" style="background-image: url(https://hd.unsplash.com/photo-1471074454408-f7db62d99254)"></div>',
+        next: 4,
+        prev: 2
+      },
+      {
+        id: 4,
+        content: '<div class="slide-image" style="background-image: url(https://hd.unsplash.com/photo-1470660513416-5494d0eab742)"></div>',
+        next: 1,
+        prev: 3
+      }
+    ]
+  };
+
+  /* eslint-disable */
+  new Slider(sliderOptions);
+  /* eslint-enable */
+
+  const apiUrl = 'http://172.20.10.2:8888/villaarttu/proxy.php';
   const container = document.getElementById('image-feed');
-  const slider = document.getElementById('slider');
 
   function renderImageFeedItem (imageData) {
     return `
@@ -31,54 +59,3 @@
       container.innerHTML = content;
     });
   });
-
-  function setActiveSlide(target) {
-    let active = slider.querySelector('.slide-active');
-    let activeTab = slider.querySelector('.tab-active');
-
-    if (active) {
-      active.classList.remove('slide-active');
-    }
-
-    if (activeTab) {
-      activeTab.classList.remove('tab-active');
-    }
-
-    slider.querySelector(`[data-image="${target}"]`).classList.add('slide-active');
-    slider.querySelector(`[data-target="${target}"]`).classList.add('tab-active');
-  }
-
-  let images = slideImages.map((imagePath) => {
-    return `
-        <div class="slide" data-image="${imagePath}">
-          <div class="slide-image" style="background-image: url('${imagePath}')"></div>
-        </div>
-      `;
-    }).join('');
-
-  let tabs = slideImages.map((imagePath) => {
-      return `
-        <div class="slider-tab" data-target="${imagePath}"></div>
-      `;
-  }).join('');
-
-  tabs = `<div class="slider-tabs-wrapper">${tabs}</div>`;
-
-
-  slider.innerHTML = images + tabs;
-
-  let setSlide = function (evt) {
-     setActiveSlide(evt.srcElement.getAttribute('data-target'));
-  };
-
-  let sliderTabElements = slider.querySelectorAll('.slider-tab');
-  for (let i = 0; i < sliderTabElements.length; i++) {
-    let element = sliderTabElements[i];
-
-    element.addEventListener('click', setSlide);
-    element.addEventListener('touchend', setSlide);
-  }
-
-  setActiveSlide(slideImages[0]);
-
-})();

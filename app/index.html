@@ -4,13 +4,14 @@
     <meta charset="utf-8">
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>villaarttu</title>
+    <title>Villa Arttu</title>
 
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
     <!-- Place favicon.ico in the root directory -->
 
     <!-- build:css styles/vendor.css -->
     <!-- bower:css -->
+    <link rel="stylesheet" href="/bower_components/Ionicons/css/ionicons.css" />
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -25,7 +26,8 @@
     <![endif]-->
 
     <header class="container">
-      <div id="slider"></div>
+      <div id="slider">
+      </div>
     </header>
     <div class="container">
 
@@ -50,7 +52,7 @@
       </section>
 
       <section class="row links-container">
-        <div class="link-item col-xs-12 col-md-6 col-lg-4">
+        <div class="link-item col-xs-12 col-md-4">
           <figure></figure>
           <h3>Lasten ja nuorten taidekeskus</h3>
           <div class="text-container">
@@ -64,7 +66,7 @@
             <a href="">linkki 1</a>
           </div>
         </div>
-        <div class="link-item col-xs-12 col-md-6 col-lg-4">
+        <div class="link-item col-xs-12 col-md-4">
           <figure></figure>
           <h3>Hyvinkään lasten ja nuorten kuvataidekoulu</h3>
           <div class="text-container">
@@ -78,7 +80,7 @@
             <a href="">linkki 1</a>
           </div>
         </div>
-        <div class="link-item col-xs-12 col-md-6 col-lg-4">
+        <div class="link-item col-xs-12 col-md-4">
           <figure></figure>
           <h3>Taito-käsityökoulu Helmi</h3>
           <div class="text-container">
@@ -95,7 +97,7 @@
       </section>
 
       <section class="image-feed row">
-        <h2>instagram feed @villaarttu #villaarttu</h2>
+        <h2><i class="ion ion-social-instagram"></i>instagram feed @villaarttu #villaarttu</h2>
         <div id="image-feed"></div>
       </section>
 
@@ -104,7 +106,9 @@
           <h2>Villa Arttu</h2>
         </div>
         <div class="col-xs-12 col-md-4 text-center footer-item">
-          <h3>Saapumisohjeet</h3>
+          <a href="https://www.google.fi/maps/place/Kankurinkatu+4-6,+05800+Hyvinkää" target="_blank">
+            <h3>Saapumisohjeet</h3>
+          </a>
         </div>
         <div class="col-xs-12 col-md-4 text-right footer-item">
           <p>Villatehdas O-rappu<br/>
@@ -127,8 +131,10 @@
 
     <!-- build:js scripts/vendor.js -->
     <!-- bower:js -->
+    <script src="/bower_components/es5-shim/es5-shim.js"></script>
     <script src="/bower_components/jquery/dist/jquery.js"></script>
     <script src="/bower_components/fetch/fetch.js"></script>
+    <script src="/bower_components/es6-shim/es6-shim.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -136,6 +142,7 @@
     <!-- endbuild -->
 
     <!-- build:js scripts/main.js -->
+    <script src="scripts/slider.js"></script>
     <script src="scripts/main.js"></script>
     <!-- endbuild -->
   </body>

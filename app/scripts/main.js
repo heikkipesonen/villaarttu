@@ -36,7 +36,7 @@
   new Slider(sliderOptions);
   /* eslint-enable */
 
-  const apiUrl = 'http://172.20.10.2:8888/villaarttu/proxy.php';
+  const apiUrl = 'data.json';
   const container = document.getElementById('image-feed');
 
   function renderImageFeedItem (imageData) {
@@ -48,7 +48,6 @@
     </div>
     `;
   }
-
 
   container.classList.add('api-loading');
 

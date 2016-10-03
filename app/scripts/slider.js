@@ -54,6 +54,11 @@ class Slider {
       }
     });
 
+    window.addEventListener('resize', () => {
+      this.resizeSlides();
+      this.center = 1;
+    });
+
     this.resizeSlides();
     this.buildIndicators();
     this.update();

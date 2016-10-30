@@ -27,6 +27,9 @@
     "main-bower-files": "^2.5.0",
     "wiredep": "^2.2.2"
   },
+  "scripts": {
+    "deploy": "git subtree push --prefix dist origin gh-pages"
+  },
   "eslintConfig": {
     "env": {
       "es6": true,

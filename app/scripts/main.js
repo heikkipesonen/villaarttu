@@ -32,8 +32,18 @@
     ]
   };
 
+  const parallaxLayers = [
+    {
+      image: 'images/1-2300x5200.png'
+    },
+    {
+      image: 'images/2-2300x5200.png'
+    }
+  ]
+
   /* eslint-disable */
   new Slider(sliderOptions);
+  new ParallaxScroller(parallaxLayers)
   /* eslint-enable */
 
   const apiUrl = 'data.json';

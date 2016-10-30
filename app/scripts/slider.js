@@ -215,6 +215,7 @@ class Slider {
       this.slideContainer.style.transform = `translate3d(${-this.state.x}px, 0, 0)`;
       this.slideContainer.style['-webkit-transform'] = `translate3d(${-this.state.x}px, 0, 0)`;
       this.slideContainer.style['-ms-transform'] = `translate3d(${-this.state.x}px, 0, 0)`;
+      this.slideContainer.style['-o-transform'] = `translate3d(${-this.state.x}px, 0, 0)`;
       this.slideContainer.style['transition-duration'] = `${this.state.animation}ms`;
 
       this._state.dirty = false;

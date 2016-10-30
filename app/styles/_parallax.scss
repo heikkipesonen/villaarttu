@@ -1,0 +1,19 @@
+.parallax-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  overflow: hidden;
+
+  div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    transform: translate3d(0,0,0);
+
+    img {
+      max-width: 100%;
+    }
+  }
+}

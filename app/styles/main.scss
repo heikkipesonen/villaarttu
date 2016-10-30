@@ -5,11 +5,13 @@ $brand-primary: rgb(234, 48, 30);
 // bower:scss
 @import "bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
 // endbower
+@import 'fonts';
 @import 'slider';
 @import 'link-item';
 @import 'footer';
 @import 'header';
 @import 'image-feed';
+@import 'parallax';
 
 
 .browserupgrade {
@@ -19,12 +21,29 @@ $brand-primary: rgb(234, 48, 30);
   padding: 0.2em 0;
 }
 
+.main-container {
+  padding: 0;
+  position: relative;
+  z-index: 1;
+  background-color: white;
+
+  >.container {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+html, body {
+  font-family: 'ValueSerif';
+}
+
 section {
   margin: 40px 0;
 }
 
 @for $i from 1 through 6 {
   h#{$i} {
+    font-family: 'ValueMedium';
     color: $brand-primary;
   }
 }

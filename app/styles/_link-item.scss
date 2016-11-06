@@ -1,5 +1,6 @@
 .link-item {
   padding-bottom: $grid-gutter-width;
+  overflow: hidden;
 
   figure {
     height: 0px;
@@ -12,7 +13,12 @@
   }
 
   .links-container {
+    width: 100%;
+
     a {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 100%;
       display: block;
     }
   }

@@ -4,32 +4,16 @@
   const sliderOptions = {
     element: '#slider',
     animation: 300,
-    slides: [
-      {
-        id: 1,
-        content: '<div class="slide-image" style="background-image: url(https://hd.unsplash.com/photo-1470104240373-bc1812eddc9f)"></div>',
-        next: 2,
-        prev: 4
-      },
-      {
-        id: 2,
-        content: '<div class="slide-image" style="background-image: url(https://hd.unsplash.com/photo-1470229722913-7c0e2dbbafd3)"></div>',
-        next: 3,
-        prev: 1
-      },
-      {
-        id: 3,
-        content: '<div class="slide-image" style="background-image: url(https://hd.unsplash.com/photo-1471074454408-f7db62d99254)"></div>',
-        next: 4,
-        prev: 2
-      },
-      {
-        id: 4,
-        content: '<div class="slide-image" style="background-image: url(https://hd.unsplash.com/photo-1470660513416-5494d0eab742)"></div>',
-        next: 1,
-        prev: 3
+    interval: 5000,
+    slides: Array(12).fill(false).map((item, index) => {
+      let i = index + 1;
+      return {
+        id: index,
+        content: `<div class="slide-image" style="background-image: url('../images/${i}.jpg')"></div>`,
+        next: i > 11 ? 0 : i,
+        prev: i - 2 < 0 ? 11 : i - 2
       }
-    ]
+    })
   };
 
   const parallaxLayers = [
@@ -42,8 +26,8 @@
   ]
 
   /* eslint-disable */
-  new Slider(sliderOptions);
-  new ParallaxScroller(parallaxLayers)
+  var slider = new Slider(sliderOptions);
+  var scroll = new ParallaxScroller(parallaxLayers);
   /* eslint-enable */
 
   const apiUrl = 'data.json';
@@ -68,3 +52,12 @@
       container.innerHTML = content;
     });
   });
+
+
+  function sliderNext () {
+    slider.next();
+  }
+
+  function sliderPrev () {
+    slider.prev();
+  }

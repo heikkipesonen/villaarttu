@@ -15,6 +15,7 @@ class Slider {
     };
 
     this.lastEvent = false;
+    this.timer = false;
 
     this.indicators = [];
     this.slides = [
@@ -62,6 +63,8 @@ class Slider {
     this.resizeSlides();
     this.buildIndicators();
     this.update();
+
+    this.setTimer();
 
     this.current = options.slides[0].id;
     this.center = 1;
@@ -115,6 +118,8 @@ class Slider {
       this.current = this.currentSlide.next;
       this.reflow();
       this.state = {animation: 0};
+      this.setTimer();
+
     }, this.options.animation || 300);
   }
 
@@ -131,6 +136,8 @@ class Slider {
       this.current = this.currentSlide.prev;
       this.reflow();
       this.state = {animation: 0};
+      this.setTimer();
+
     }, this.options.animation || 300);
   }
 
@@ -210,6 +217,21 @@ class Slider {
     });
   }
 
+  clearTimer () {
+    if (this.timer) {
+      clearTimeout(this.timer);
+    }
+  }
+
+  setTimer () {
+    this.clearTimer();
+    if (this.options.interval) {
+      this.timer = setTimeout(() => {
+        this.next();
+      }, this.options.interval);
+    }
+  }
+
   update () {
     if (this.state.dirty) {
       this.slideContainer.style.transform = `translate3d(${-this.state.x}px, 0, 0)`;
@@ -226,6 +248,7 @@ class Slider {
   startDrag (evt) {
     this.state.dragStarted = true;
     this.lastEvent = this.getPointer(evt);
+    this.clearTimer();
   }
 
   onDrag (evt) {
@@ -258,6 +281,7 @@ class Slider {
       this.resetPosition();
     }
 
+    this.setTimer();
     this.state = {
       deltax: 0,
       deltay: 0

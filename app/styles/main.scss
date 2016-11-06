@@ -48,6 +48,11 @@ section {
   }
 }
 
+
+a, .open-info, footer * {
+  font-family: 'CourierCode-Roman';
+}
+
 strong {
   font-weight: bold;
 }
@@ -59,4 +64,25 @@ strong {
 footer {
   margin: 40px 0;
   padding-bottom: 60px;
+}
+
+.social-icons {
+  position: absolute;
+  top: 16px;
+  right: -72px;
+  font-size: 40px;
+  text-align: center;
+
+  i {
+    display: block;
+  }
+}
+@media (max-width: 1300px) {
+  .social-icons {
+    position: relative;
+    right: 0px;
+    i {
+      display: inline-block;
+    }
+  }
 }

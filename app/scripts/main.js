@@ -12,7 +12,7 @@
         content: `<div class="slide-image" style="background-image: url('../images/${i}.jpg')"></div>`,
         next: i > 11 ? 0 : i,
         prev: i - 2 < 0 ? 11 : i - 2
-      }
+      };
     })
   };
 
@@ -53,7 +53,7 @@
     });
   });
 
-
+  /* eslint-disable */
   function sliderNext () {
     slider.next();
   }
@@ -61,3 +61,4 @@
   function sliderPrev () {
     slider.prev();
   }
+  /* eslint-enable */

@@ -23,7 +23,7 @@
     {
       image: 'images/2-2300x5200.png'
     }
-  ]
+  ];
 
   /* eslint-disable */
   var slider = new Slider(sliderOptions);

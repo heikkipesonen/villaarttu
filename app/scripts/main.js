@@ -9,7 +9,7 @@
       let i = index + 1;
       return {
         id: index,
-        content: `<div class="slide-image" style="background-image: url('../images/${i}.jpg')"></div>`,
+        content: `<div class="slide-image" style="background-image: url('images/${i}.jpg')"></div>`,
         next: i > 11 ? 0 : i,
         prev: i - 2 < 0 ? 11 : i - 2
       };

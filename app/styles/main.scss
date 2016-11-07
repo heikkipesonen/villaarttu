@@ -1,7 +1,7 @@
 $icon-font-path: '../fonts/';
 $grid-gutter-width: 32px;
 $brand-primary: rgb(234, 48, 30);
-
+$container-large-desktop: 1100px;
 // bower:scss
 @import "bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
 // endbower
@@ -30,6 +30,18 @@ $brand-primary: rgb(234, 48, 30);
   >.container {
     padding-left: 0;
     padding-right: 0;
+  }
+
+  @media (max-width: $screen-md-max) {
+    >.container {
+      padding-left: $grid-gutter-width / 2;
+      padding-right: $grid-gutter-width / 2;
+    }
+
+    header.container {
+      padding-left: 0;
+      padding-right: 0;
+    }
   }
 }
 
@@ -77,10 +89,18 @@ footer {
     display: block;
   }
 }
-@media (max-width: 1300px) {
+
+
+@media (max-width: 1250px) {
+  .social-icons {
+    right: -40px;
+  }
+}
+@media (max-width: $screen-md-min) {
   .social-icons {
     position: relative;
-    right: 0px;
+    right: auto;
+    top: auto;
     i {
       display: inline-block;
     }

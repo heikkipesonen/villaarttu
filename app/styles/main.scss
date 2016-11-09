@@ -1,7 +1,8 @@
 $icon-font-path: '../fonts/';
 $grid-gutter-width: 32px;
 $brand-primary: rgb(234, 48, 30);
-$container-large-desktop: 1100px;
+$font-size-base: 14px;
+
 // bower:scss
 @import "bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
 // endbower
@@ -28,30 +29,29 @@ $container-large-desktop: 1100px;
   background-color: white;
 
   >.container {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+  .slider-container {
     padding-left: 0;
     padding-right: 0;
   }
 
-  @media (max-width: $screen-md-max) {
-    >.container {
-      padding-left: $grid-gutter-width / 2;
-      padding-right: $grid-gutter-width / 2;
-    }
-
-    header.container {
-      padding-left: 0;
-      padding-right: 0;
-    }
-  }
 }
 
 html, body {
   font-family: 'ValueSerif';
+  background-color:  rgb(249, 249, 249);
+}
+
+.main-text p, .links-container p {
+  font-size: 18px;
 }
 
 section {
   margin: 40px 0;
 }
+
 
 @for $i from 1 through 6 {
   h#{$i} {
@@ -60,6 +60,9 @@ section {
   }
 }
 
+.main-text h2 {
+  margin-top: 0;
+}
 
 a, .open-info, footer * {
   font-family: 'CourierCode-Roman';
@@ -89,18 +92,11 @@ footer {
     display: block;
   }
 }
-
-
-@media (max-width: 1250px) {
-  .social-icons {
-    right: -40px;
-  }
-}
-@media (max-width: $screen-md-min) {
+@media (max-width: 1300px) {
   .social-icons {
     position: relative;
-    right: auto;
-    top: auto;
+    right: 0px;
+
     i {
       display: inline-block;
     }

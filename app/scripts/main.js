@@ -18,10 +18,10 @@
 
   const parallaxLayers = [
     {
-      image: 'images/1-2300x5200.png'
+      image: 'images/villa-arttu-web-prl.png'
     },
     {
-      image: 'images/2-2300x5200.png'
+      image: 'images/villa-arttu-web-prl-2.png'
     }
   ];
 

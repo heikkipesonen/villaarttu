@@ -4,6 +4,17 @@
   margin-right: -2px;
   margin-bottom: 32px;
 
+  h2 {
+    color: black;
+    span {
+      margin-left: 32px;
+    }
+  }
+
+  h2 i {
+    margin-right: 16px;
+  }
+
   .image-feed-item {
     padding: 2px;
 

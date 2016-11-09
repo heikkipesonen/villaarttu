@@ -61,9 +61,14 @@
     background-position: center center;
 
     &:after {
-      content: url('../images/image-overlay.png');
+      content: " ";
+      width: 110px;
+      height: 140px;
+      background-image: url('../images/image-overlay.png');
+      background-size: contain;
+      background-repeat: no-repeat;
       position: absolute;
-      right: 16px;
+      left: 16px;
       bottom: 16px;
     }
   }

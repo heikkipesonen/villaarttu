@@ -3,9 +3,17 @@
   overflow: hidden;
 
   figure {
+    position: relative;
     height: 0px;
     padding-bottom: 40%;
-    background-color: #eee;
+
+    .image-container {
+      position: absolute;
+      top:0; left:0; right:0; bottom:0;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center center;
+    }
   }
 
   .text-container {

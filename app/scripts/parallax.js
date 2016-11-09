@@ -34,10 +34,12 @@ class ParallaxScroller {
       movementRatio: 0
     };
 
+    renderLayer.el.classList.add('parallax-layer');
+
     this.scrollContainer.appendChild(renderLayer.el);
 
     img.onload = function () {
-      renderLayer.el.appendChild(img);
+      renderLayer.el.style['background-image'] = `url(${img.src})`
       me.resize();
     };
 
@@ -54,20 +56,19 @@ class ParallaxScroller {
     this.maxScroll = (this.scrollContent.scrollHeight - this.container.innerHeight);
 
     this._layers.forEach((layer) => {
-      layer.movementRatio = this.scrollContent.scrollHeight / layer.el.offsetHeight;
+      layer.movementRatio = layer.el.offsetHeight / this.scrollContent.scrollHeight;
     });
 
     this.applyScroll();
   }
 
   applyScroll () {
-    let currentPosition = this.container.scrollY;
-
     this._layers.map((layer) => {
+      let currentPosition = -this.container.scrollY * layer.movementRatio;
       prefixes.forEach((prefix) => {
-        layer.el.style[`-${prefix}-transform`] = `translate3d(0, ${-currentPosition * layer.movementRatio}px, 0)`;
+        layer.el.style[`-${prefix}-transform`] = `translate3d(0, ${currentPosition}px, 0)`;
       });
-      layer.el.style[`transform`] = `translate3d(0, ${-currentPosition * layer.movementRatio}px, 0)`;
+      layer.el.style[`transform`] = `translate3d(0, ${currentPosition}px, 0)`;
     });
   }
 

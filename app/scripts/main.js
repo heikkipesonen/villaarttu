@@ -50,6 +50,8 @@
       container.classList.remove('api-loading');
       let content = data.items.map(renderImageFeedItem).join('');
       container.innerHTML = content;
+
+      window.dispatchEvent(new Event('resize'));
     });
   });
 

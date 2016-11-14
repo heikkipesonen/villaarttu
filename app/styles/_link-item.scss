@@ -1,3 +1,11 @@
+.links-container {
+  margin-top: 64px;
+
+  @media (max-width: $screen-md-min) {
+    margin-top: 32px;
+  }
+}
+
 .link-item {
   padding-bottom: $grid-gutter-width;
   overflow: hidden;

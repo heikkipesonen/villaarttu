@@ -1,5 +1,15 @@
 footer.row {
 
+  .footer-item {
+    img {
+      max-width: 100%;
+    }
+  }
+
+  .footer-logo img {
+    max-width: 128px;
+  }
+
   @media (min-width: $screen-md-min) {
     display: table;
     width: 100%;
@@ -13,10 +23,6 @@ footer.row {
       padding-left: 0;
       padding-right: 0;
 
-      img {
-        max-width: 128px;
-      }
-
       * {
         margin: 0;
       }
@@ -28,5 +34,10 @@ footer.row {
       min-height: 90px;
       text-align: center !important;
     }
+
+    .footer-logo {
+      padding-bottom: 64px;
+    }
+
   }
 }

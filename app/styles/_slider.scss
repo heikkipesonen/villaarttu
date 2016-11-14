@@ -69,9 +69,16 @@
       background-repeat: no-repeat;
       position: absolute;
       left: 16px;
-      bottom: 16px;
+      bottom: 32px;
+
+      @media (max-width: $screen-md-min) {
+          width: 60px;
+          height: 70px;
+      }
     }
   }
+
+
 }
 
 .slider-wrapper {
@@ -113,5 +120,24 @@
 
   .slider-control {
     color: rgb(234, 48, 30);
+  }
+}
+
+.social-icons {
+  position: absolute;
+  top: 16px;
+  right: -72px;
+  font-size: 40px;
+  text-align: center;
+
+  i {
+    padding-bottom: 8px;
+    display: block;
+  }
+}
+@media (max-width: 1300px) {
+  .social-icons {
+    right: 16px;
+    z-index: 32;
   }
 }

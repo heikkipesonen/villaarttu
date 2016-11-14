@@ -261,6 +261,15 @@ class Slider {
     let dx = this.lastEvent.x - currentPosition.x;
     let dy = this.lastEvent.y - currentPosition.y;
 
+    if (Math.abs(dx) > 10) {
+      evt.stopPropagation();
+      evt.preventDefault();
+    }
+
+    if (Math.abs(dy) > 10) {
+      return;
+    }
+
     this.state = {
       x: this.state.x + dx,
       y: this.state.x + dy,

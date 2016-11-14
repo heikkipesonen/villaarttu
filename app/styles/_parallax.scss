@@ -27,3 +27,9 @@
     }
   }
 }
+
+@media (max-width: $screen-md-min) {
+  .parallax-wrapper {
+    display: none;
+  }
+}

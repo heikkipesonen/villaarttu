@@ -19,14 +19,16 @@
       margin-left: 32px;
     }
 
-    @media (max-width: $screen-md-min) {
+    @media (max-width: $screen-sm) {
       font-size: 16pt;
+    }
 
+    @media (max-width: 500px) {
       span.spacer {
-        display: inline-block;
-        width: 48%;
+        display: block;
         text-align: left;
-        margin-left: 0px;
+        margin-left: 52px;
+        width: 50%;
       }
     }
   }

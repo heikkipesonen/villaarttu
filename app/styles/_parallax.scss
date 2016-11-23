@@ -19,15 +19,21 @@
 
   .parallax-layer {
     width: 100%;
-    height: 100vh;
-    background-size: 25%;
+    height: 5000px;
+    background-size: percentage(1/3);
 
     &:nth-child(even) {
-      height: 400vh;
+      height: 4000px;
     }
   }
 
   @media (max-width: $screen-md-min) {
+    display: none;
+  }
+}
+
+@media (max-width: $screen-md-min) {
+  .parallax-wrapper {
     display: none;
   }
 }

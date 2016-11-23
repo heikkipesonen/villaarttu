@@ -4,7 +4,6 @@
   "dependencies": {
     "bootstrap-sass": "~3.3.5",
     "fetch": "^1.0.0",
-    "Ionicons": "ionicons#^2.0.1",
     "es5-shim": "^4.5.9",
     "es6-shim": "^0.35.1"
   },

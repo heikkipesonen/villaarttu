@@ -26,4 +26,8 @@
       height: 400vh;
     }
   }
+
+  @media (max-width: $screen-md-min) {
+    display: none;
+  }
 }

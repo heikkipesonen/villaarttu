@@ -1,18 +1,20 @@
+$icon-size: 50px;
+
 .icon {
   background-image: url('../images/icons.png');
   position: relative;
   display: inline-block;
-  width: 64px;
-  height: 64px;
+  width: $icon-size;
+  height: $icon-size;
   background-size: 400% 200%;
   background-repeat: no-repeat;
 
   &:hover {
-    background-position-y: -64px;
+    background-position-y: -$icon-size;
   }
 
   &.arrow-back {
-    background-position-x: -64px;
+    background-position-x: -$icon-size;
   }
 
   &.arrow-forward {
@@ -20,11 +22,11 @@
   }
 
   &.facebook {
-    background-position-x: -128px;
+    background-position-x: - 2 * $icon-size;
   }
 
   &.instagram {
-    background-position-x: -192px;
+    background-position-x: - 3 * $icon-size;
   }
 
 }

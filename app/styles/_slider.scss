@@ -68,7 +68,7 @@
       background-size: contain;
       background-repeat: no-repeat;
       position: absolute;
-      left: 16px;
+      left: $grid-gutter-width;
       bottom: 32px;
 
       @media (max-width: $screen-md-min) {

@@ -123,6 +123,8 @@
   }
 }
 
+
+
 .social-icons {
   position: absolute;
   top: 16px;
@@ -139,5 +141,17 @@
   .social-icons {
     right: 16px;
     z-index: 32;
+  }
+}
+
+@media (max-width: $screen-md-min) {
+  .social-icons {
+    display: inline-block;
+    left: 0; right: 0;
+    width: 100%;
+
+    i {
+      display: inline-block;
+    }
   }
 }

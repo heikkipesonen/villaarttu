@@ -26,6 +26,10 @@
       height: 4000px;
     }
   }
+
+  @media (max-width: $screen-md-min) {
+    display: none;
+  }
 }
 
 @media (max-width: $screen-md-min) {

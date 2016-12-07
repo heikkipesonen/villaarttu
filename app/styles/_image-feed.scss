@@ -6,13 +6,35 @@
 
   h2 {
     color: black;
-    span {
+    vertical-align: baseline;
+
+    span.icon-row {
+      position: relative;
+      padding-left: 56px;
+      line-height: 50px;
+    }
+
+    span.spacer {
+      line-height: 50px;
       margin-left: 32px;
+    }
+
+    @media (max-width: $screen-md-min) {
+      font-size: 16pt;
+
+      span.spacer {
+        display: inline-block;
+        width: 48%;
+        text-align: left;
+        margin-left: 0px;
+      }
     }
   }
 
   h2 i {
-    margin-right: 16px;
+    position: absolute;
+    margin-right: 8px;
+    left: 0;
   }
 
   .image-feed-item {

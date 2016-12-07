@@ -11,7 +11,6 @@
 
     <!-- build:css styles/vendor.css -->
     <!-- bower:css -->
-    <link rel="stylesheet" href="/bower_components/Ionicons/css/ionicons.css" />
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -28,20 +27,20 @@
       <header class="container slider-container">
         <div class="social-icons">
           <a href="https://www.instagram.com/villaarttu/" target="_blank">
-            <i class="ion-social-instagram"></i>
+            <i class="icon instagram"></i>
           </a>
           <a href="https://www.facebook.com/villaarttu" target="_blank">
-            <i class="ion-social-facebook"></i>
+            <i class="icon facebook"></i>
           </a>
         </div>
 
         <div class="slider-wrapper">
           <div id="slider"></div>
           <div class="slider-control slider-control-left" onclick="sliderPrev()">
-            <i class="ion-ios-arrow-back"></i>
+            <i class="icon arrow-back"></i>
           </div>
           <div class="slider-control slider-control-right" onclick="sliderNext()">
-            <i class="ion-ios-arrow-forward"></i>
+            <i class="icon arrow-forward"></i>
           </div>
         </div>
       </header>
@@ -120,7 +119,11 @@
         </section>
 
         <section class="image-feed row">
-          <h2><i class="ion ion-social-instagram"></i>instagram feed <span>@villaarttu</span> <span>#villaarttu</span></h2>
+          <h2>
+            <span class="icon-row"><i class="icon instagram"></i>instagram feed</span>
+            <span class="spacer">@villaarttu</span>
+            <span class="spacer">#villaarttu</span>
+          </h2>
           <div id="image-feed"></div>
         </section>
 

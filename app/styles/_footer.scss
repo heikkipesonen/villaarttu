@@ -7,11 +7,30 @@ footer.row {
   }
 
   .footer-logo img {
-    max-width: 128px;
-    margin-right: $grid-gutter-width;
+    width: 128px;    
+
+    &.logo-2 {
+      width: 180px;
+    }    
+
+    &:not(:last-child) {
+      margin-right: $grid-gutter-width;
+    }
   }
 
-  @media (min-width: $screen-md-min) {
+  @media (max-width: $screen-md-min) {
+    .footer-logo {
+      text-align: center;
+    }
+    .footer-logo img {
+      display: inline-block;
+      margin-right: 0 !important;
+      margin-top: 1em;
+      margin-bottom: 1em;
+    }
+  }
+
+  @media (min-width: $screen-md-max) {
     display: table;
     width: 100%;
     margin-left: 0;
@@ -30,7 +49,7 @@ footer.row {
     }
   }
 
-  @media (max-width: $screen-md-min) {
+  @media (max-width: $screen-md-max) {
     .footer-item {
       min-height: 90px;
       text-align: center !important;

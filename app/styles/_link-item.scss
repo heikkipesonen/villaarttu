@@ -18,9 +18,6 @@
     .image-container {
       position: absolute;
       top:0; left:0; right:0; bottom:0;
-      background-size: contain;
-      background-repeat: no-repeat;
-      background-position: center center;
     }
   }
 
@@ -40,6 +37,20 @@
       text-overflow: ellipsis;
       max-width: 100%;
       display: block;
+    }
+  }
+
+  .logo-image {
+    background-repeat: no-repeat;
+    background-image: url('../images/logot.jpg');
+    background-size: 300% 100%;
+
+    &.logo-image-1 {}
+    &.logo-image-2 {
+      background-position: 50% 0;
+    }
+    &.logo-image-3 {
+      background-position: 100% 0;
     }
   }
 }

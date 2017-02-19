@@ -1,12 +1,12 @@
 $icon-size: 50px;
 
 .icon {
-  background-image: url('../images/icons.png');
+  background-image: url('../images/icons-2.png');
   position: relative;
   display: inline-block;
   width: $icon-size;
   height: $icon-size;
-  background-size: 400% 200%;
+  background-size: 500% 200%;
   background-repeat: no-repeat;
 
   &:hover {
@@ -27,6 +27,10 @@ $icon-size: 50px;
 
   &.instagram {
     background-position-x: - 3 * $icon-size;
+  }
+
+  &.twitter {
+    background-position-x: - 4 * $icon-size;
   }
 
 }

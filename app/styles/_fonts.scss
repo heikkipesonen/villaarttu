@@ -19,3 +19,15 @@
   font-weight: normal;
   font-style: normal;
 }
+
+@font-face {
+    font-family: 'value-regular';
+    src: url('../fonts/value-regular.eot');
+    src: url('../fonts/value-regular.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/value-regular.woff') format('woff'),
+         url('../fonts/value-regular.woff2') format('woff2'),
+         url('../fonts/value-regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
+}

@@ -30,7 +30,7 @@
   var scroll = new ParallaxScroller(parallaxLayers);
   /* eslint-enable */
 
-  const apiUrl = 'data.json';
+  const apiUrl = '/proxy.php';
   const container = document.getElementById('image-feed');
 
   function renderImageFeedItem (imageData) {
@@ -44,6 +44,10 @@
   }
 
   container.classList.add('api-loading');
+  const loader = document.createElement('div');
+        loader.classList.add('loader');
+
+  container.appendChild(loader);
 
   fetch(apiUrl).then((blob) => {
     blob.json().then((data) => {

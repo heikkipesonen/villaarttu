@@ -9,28 +9,43 @@ $icon-size: 50px;
   background-size: 500% 200%;
   background-repeat: no-repeat;
 
-  &:hover {
-    background-position-y: -$icon-size;
-  }
-
+  $negativeSize: -$icon-size;
   &.arrow-back {
-    background-position-x: -$icon-size;
+    background-position: $negativeSize 0;
+    &:hover {
+      background-position: $negativeSize $negativeSize;
+    }
   }
 
   &.arrow-forward {
-    background-position-x: 0;
+    background-position: 0 0;
+    &:hover {
+      background-position: 0 $negativeSize;
+    }
   }
 
   &.facebook {
-    background-position-x: - 2 * $icon-size;
+    $position: - 2 * $icon-size;
+    background-position: $position 0;
+    &:hover {
+      background-position: $position $negativeSize;
+    }    
   }
 
   &.instagram {
-    background-position-x: - 3 * $icon-size;
+    $position:- 3 * $icon-size;
+    background-position: $position 0;
+    &:hover {
+      background-position: $position $negativeSize;
+    }    
   }
 
   &.twitter {
-    background-position-x: - 4 * $icon-size;
+    $position:- 4 * $icon-size;
+    background-position: $position 0;
+    &:hover {
+      background-position: $position $negativeSize;
+    }    
   }
 
 }
